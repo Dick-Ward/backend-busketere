@@ -1,0 +1,2 @@
+class BuskersController < ApplicationController
+end
