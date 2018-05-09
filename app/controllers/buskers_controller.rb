@@ -11,8 +11,15 @@ class BuskersController < ApplicationController
     render json: busker
   end
 
-  def delete
-    busker = Busker.find(id: params[:id])
+  def update
+    busker = Busker.find(params[:id])
+     if busker.update(busker_params)
+       render json: busker
+     end
+  end
+
+  def destroy
+    busker = Busker.find(params[:id])
     render json: busker
     busker.delete
   end
